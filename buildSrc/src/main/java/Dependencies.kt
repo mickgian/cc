@@ -4,12 +4,9 @@ object ApplicationId {
 
 object Modules {
     val app = ":app"
-
     val navigation = ":navigation"
-
     val common = ":common"
     val commonTest = ":common_test"
-
     val local = ":data:local"
     val remote = ":data:remote"
     val model = ":data:model"
