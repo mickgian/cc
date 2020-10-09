@@ -1,13 +1,13 @@
 package me.mickgian.remote
 
 /**
- * Implementation of [UserService] interface
+ * Implementation of [Api] interface
  */
-class UserDatasource(private val userService: UserService) {
+class UserDatasource(private val api: Api) {
 
     fun fetchTopUsersAsync() =
-            userService.fetchTopUsersAsync()
+            api.fetchTopUsersAsync()
 
     fun fetchUserDetailsAsync(login: String) =
-            userService.fetchUserDetailsAsync(login)
+            api.fetchUserDetailsAsync(login)
 }

@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface UserService {
+interface Api {
 
     @GET("search/users")
     fun fetchTopUsersAsync(@Query("q") query: String = "mick",
