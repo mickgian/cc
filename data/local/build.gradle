@@ -15,8 +15,6 @@ dependencies {
     kapt Libraries.roomCompiler
     implementation Libraries.roomRunTime
     implementation Libraries.roomKtx
-    // TEST MODULE
-    androidTestImplementation project(Modules.commonTest)
     // DATA MODULE
     implementation project(Modules.model)
     // KOIN

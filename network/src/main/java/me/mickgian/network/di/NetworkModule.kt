@@ -1,9 +1,9 @@
-package me.mickgian.remote.di
+package me.mickgian.network.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import me.mickgian.remote.UserDatasource
-import me.mickgian.remote.Api
-import me.mickgian.remote.BuildConfig
+import me.mickgian.network.UserDatasource
+import me.mickgian.network.Api
+import me.mickgian.network.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

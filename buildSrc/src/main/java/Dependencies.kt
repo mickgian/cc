@@ -4,11 +4,12 @@ object ApplicationId {
 
 object Modules {
     val app = ":app"
+
     val navigation = ":navigation"
     val common = ":common"
-    val commonTest = ":common_test"
+
     val local = ":data:local"
-    val remote = ":data:remote"
+    val network = ":network"
     val model = ":data:model"
     val repository = ":data:repository"
 
@@ -46,7 +47,6 @@ object Versions {
     val room = "2.1.0-alpha06"
     val recyclerview = "1.1.0"
     val safeArgs = "2.2.2"
-    val glide = "4.9.0"
     val mockwebserver = "2.7.5"
     val archCoreTest = "2.0.0"
     val androidJunit = "1.1.0"
@@ -69,8 +69,6 @@ object Libraries {
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitGson}"
     val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
-    // GLIDE
-    val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 }
 
 object KotlinLibraries {

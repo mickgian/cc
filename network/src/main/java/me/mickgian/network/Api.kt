@@ -1,4 +1,4 @@
-package me.mickgian.remote
+package me.mickgian.network
 
 import kotlinx.coroutines.Deferred
 import me.mickgian.model.ApiResult

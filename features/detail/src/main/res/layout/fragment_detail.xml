@@ -39,7 +39,6 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:background="?attr/selectableItemBackground"
-                    app:imageUrlRounded="@{viewmodel.user.avatarUrl}"
                     android:onClick="@{() -> viewmodel.userClicksOnAvatarImage(viewmodel.user)}"
                     android:transitionName="@string/transition_avatar_orig"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView"

@@ -8,7 +8,7 @@ import me.mickgian.common_test.rules.CoroutinesMainDispatcherRule
 import me.mickgian.local.dao.UserDao
 import me.mickgian.model.ApiResult
 import me.mickgian.model.User
-import me.mickgian.remote.UserDatasource
+import me.mickgian.network.UserDatasource
 import me.mickgian.repository.utils.FakeData
 import me.mickgian.repository.utils.Resource
 import org.junit.Before

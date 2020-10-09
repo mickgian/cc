@@ -34,7 +34,6 @@ class HomeFragment : BaseFragment() {
 
     override fun getViewModel(): BaseViewModel = viewModel
 
-    // ---
 
     private fun configureRecyclerView() {
         binding.fragmentHomeRv.adapter = HomeAdapter(viewModel)

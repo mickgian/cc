@@ -45,7 +45,6 @@
                     android:layout_marginEnd="8dp"
                     android:clickable="true"
                     android:focusable="true"
-                    app:imageUrlRounded="@{viewmodel.user.avatarUrl}"
                     android:onClick="@{() -> viewmodel.userClicksOnAvatarImage(viewmodel.user)}"
                     android:transitionName="@string/transition_avatar_orig"
                     app:layout_constraintEnd_toEndOf="parent"

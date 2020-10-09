@@ -6,7 +6,7 @@ import kotlinx.coroutines.Deferred
 import me.mickgian.local.dao.UserDao
 import me.mickgian.model.ApiResult
 import me.mickgian.model.User
-import me.mickgian.remote.UserDatasource
+import me.mickgian.network.UserDatasource
 import me.mickgian.repository.utils.NetworkBoundResource
 import me.mickgian.repository.utils.Resource
 

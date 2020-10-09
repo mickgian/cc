@@ -3,7 +3,7 @@ apply from: '../../android_commons.gradle'
 
 dependencies {
     // MODULES
-    implementation project(Modules.remote)
+    implementation project(Modules.network)
     implementation project(Modules.local)
     api project(Modules.model)
     // ANDROID
@@ -18,5 +18,4 @@ dependencies {
     testImplementation TestLibraries.mockk
     testImplementation TestLibraries.archCoreTest
     testImplementation TestLibraries.coroutine
-    testImplementation project(Modules.commonTest)
 }

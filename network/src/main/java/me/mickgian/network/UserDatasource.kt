@@ -1,4 +1,4 @@
-package me.mickgian.remote
+package me.mickgian.network
 
 /**
  * Implementation of [Api] interface
