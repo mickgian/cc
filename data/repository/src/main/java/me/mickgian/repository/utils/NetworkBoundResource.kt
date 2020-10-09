@@ -8,6 +8,8 @@ import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.*
 import java.lang.Exception
 import kotlin.coroutines.coroutineContext
+import me.mickgian.common.network.Resource
+
 
 abstract class NetworkBoundResource<ResultType, RequestType> {
 
@@ -25,7 +27,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                     fetchFromNetwork(dbResult)
                 } catch (e: Exception) {
                     Log.e("NetworkBoundResource", "An error happened: $e")
-                    setValue(Resource.error(e, loadFromDb()))
+                    setValue(Resource.error("Error", loadFromDb()))
                 }
             } else {
                 Log.d(NetworkBoundResource::class.java.name, "Return data from local database")

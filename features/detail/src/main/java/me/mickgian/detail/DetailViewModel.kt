@@ -7,11 +7,11 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import me.mickgian.common.base.BaseViewModel
+import me.mickgian.common.network.Resource
 import me.mickgian.common.utils.Event
 import me.mickgian.detail.domain.GetUserDetailUseCase
 import me.mickgian.model.User
 import me.mickgian.repository.AppDispatchers
-import me.mickgian.repository.utils.Resource
 
 /**
  * A simple [BaseViewModel] that provide the data and handle logic to communicate with the model

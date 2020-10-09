@@ -2,9 +2,9 @@ package me.mickgian.home.domain
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
+import me.mickgian.common.network.Resource
 import me.mickgian.model.User
 import me.mickgian.repository.UserRepository
-import me.mickgian.repository.utils.Resource
 
 /**
  * Use case that gets a [Resource][List][User] from [UserRepository]

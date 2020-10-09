@@ -3,7 +3,7 @@ package me.mickgian.detail.views
 import android.util.Log
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import me.mickgian.repository.utils.Resource
+import me.mickgian.common.network.Resource
 
 object DetailBinding {
 

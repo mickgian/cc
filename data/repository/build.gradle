@@ -6,6 +6,7 @@ dependencies {
     implementation project(Modules.network)
     implementation project(Modules.local)
     api project(Modules.model)
+    implementation project(Modules.common)
     // ANDROID
     implementation KotlinLibraries.kotlinCoroutineCore
     implementation AndroidLibraries.kotlinCoroutineAndroid
@@ -13,9 +14,4 @@ dependencies {
     // KOIN
     implementation Libraries.koin
     implementation Libraries.koinViewModel
-    // TESTS
-    testImplementation TestLibraries.junit
-    testImplementation TestLibraries.mockk
-    testImplementation TestLibraries.archCoreTest
-    testImplementation TestLibraries.coroutine
 }

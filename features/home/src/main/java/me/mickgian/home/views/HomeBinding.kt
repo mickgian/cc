@@ -5,8 +5,8 @@ import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import me.mickgian.common.network.Resource
 import me.mickgian.model.User
-import me.mickgian.repository.utils.Resource
 
 object HomeBinding {
 
