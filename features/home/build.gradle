@@ -15,9 +15,3 @@ android {
         animationsDisabled = true
     }
 }
-
-dependencies {
-    // GLIDE
-    implementation Libraries.glide
-}
-

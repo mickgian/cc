@@ -25,7 +25,7 @@ dependencies {
     implementation project(Modules.common)
     // DATA modules
     implementation project(Modules.local)
-    implementation project(Modules.remote)
+    implementation project(Modules.network)
     implementation project(Modules.repository)
     // FEATURES modules
     implementation project(Modules.featureHome)

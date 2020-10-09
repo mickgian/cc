@@ -22,8 +22,3 @@ android {
         jvmTarget = "1.8"
     }
 }
-
-dependencies {
-    // GLIDE
-    implementation Libraries.glide
-}

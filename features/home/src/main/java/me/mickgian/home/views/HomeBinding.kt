@@ -2,14 +2,11 @@ package me.mickgian.home.views
 
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import me.mickgian.common.network.Resource
 import me.mickgian.model.User
-import me.mickgian.repository.utils.Resource
 
 object HomeBinding {
 
@@ -25,11 +22,6 @@ object HomeBinding {
         with(recyclerView.adapter as HomeAdapter) {
             resource?.data?.let { updateData(it) }
         }
-    }
-
-    @BindingAdapter("app:imageUrl")
-    @JvmStatic fun loadImage(view: ImageView, url: String) {
-        Glide.with(view.context).load(url).apply(RequestOptions.circleCropTransform()).into(view)
     }
 
     @BindingAdapter("app:showWhenEmptyList")

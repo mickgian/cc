@@ -21,7 +21,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:scaleType="centerCrop"
                 android:transitionName="@string/transition_avatar_dest"
-                app:imageUrl="@{viewmodel.imageUrl}"
                 tools:src="@tools:sample/avatars"
                 app:layout_constraintTop_toTopOf="parent"/>
 

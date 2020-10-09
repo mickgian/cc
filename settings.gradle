@@ -1,1 +1,9 @@
-include ':app', ':common', ':data:remote', ':data:model', ':data:local', ':data:repository',  ':features:home', ':features:detail', ':common_test', ':navigation'
+include ':app',
+        ':common',
+        ':data:model',
+        ':data:local',
+        ':data:repository',
+        ':features:home',
+        ':features:detail',
+        ':navigation',
+        ':network'
