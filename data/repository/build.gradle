@@ -4,14 +4,14 @@ apply from: '../../android_commons.gradle'
 dependencies {
     // MODULES
     implementation project(Modules.network)
-    implementation project(Modules.local)
     api project(Modules.model)
     implementation project(Modules.common)
     // ANDROID
-    implementation KotlinLibraries.kotlinCoroutineCore
-    implementation AndroidLibraries.kotlinCoroutineAndroid
     implementation AndroidLibraries.liveData
     // KOIN
     implementation Libraries.koin
     implementation Libraries.koinViewModel
+    //RX
+    implementation Libraries.rxAndroid
+    implementation Libraries.rxJava
 }
