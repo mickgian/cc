@@ -1,7 +1,6 @@
 include ':app',
         ':common',
         ':data:model',
-        ':data:local',
         ':data:repository',
         ':features:home',
         ':features:detail',

@@ -8,7 +8,6 @@ object Modules {
     val navigation = ":navigation"
     val common = ":common"
 
-    val local = ":data:local"
     val network = ":network"
     val model = ":data:model"
     val repository = ":data:repository"
@@ -32,16 +31,15 @@ object Versions {
     val coreKtx = "1.2.0"
     val constraintLayout = "2.0.0-beta6"
     val retrofit = "2.6.0"
-    val retrofitCoroutines = "0.9.2"
     val retrofitGson = "2.5.0"
     val gson = "2.8.5"
     val okHttp = "3.12.1"
-    val coroutines = "1.3.6"
     val koin = "2.1.5"
     val lifecycle = "2.2.0"
     val nav = "2.2.2"
-    val room = "2.1.0-alpha06"
     val recyclerview = "1.1.0"
+    val reactiveAndroid = "2.1.1"
+    val reactiveJava = "2.2.9"
     val safeArgs = "2.2.2"
 }
 
@@ -49,26 +47,22 @@ object Libraries {
     // KOIN
     val koin = "org.koin:koin-android:${Versions.koin}"
     val koinViewModel = "org.koin:koin-android-viewmodel:${Versions.koin}"
-    // ROOM
-    val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
-    val roomRunTime = "androidx.room:room-runtime:${Versions.room}"
-    val roomKtx = "androidx.room:room-ktx:${Versions.room}"
     // RETROFIT
-    val retrofitCoroutineAdapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.retrofitCoroutines}"
     val gson = "com.google.code.gson:gson:${Versions.gson}"
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val retrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.retrofit}"
     val retrofitGsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofitGson}"
     val httpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
+    //RX
+    val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.reactiveAndroid}"
+    val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.reactiveJava}"
 }
 
 object KotlinLibraries {
     val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}"
-    val kotlinCoroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
 }
 
 object AndroidLibraries {
-    // KOTLIN
-    val kotlinCoroutineAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     // ANDROID
     val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
