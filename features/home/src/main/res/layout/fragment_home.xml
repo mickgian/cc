@@ -6,7 +6,7 @@
 
     <data>
         <variable
-                name="viewmodel"
+                name="viewModel"
                 type="me.mickgian.home.HomeViewModel" />
     </data>
 
@@ -14,52 +14,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/an_error_happened"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="8dp"
-                    android:id="@+id/fragment_home_text_view_empty_list"
-                    app:layout_constraintTop_toBottomOf="@+id/fragment_home_image_empty_list"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintBottom_toTopOf="@+id/marketRecyclerView"
-                    android:textStyle="bold"
-                    android:visibility="gone"/>
-
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_error_black_24dp"
-                    android:id="@+id/fragment_home_image_empty_list"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginEnd="8dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginStart="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/marketRecyclerView"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/fragment_home_text_view_empty_list"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    android:visibility="gone"
-                    android:tint="#414141"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/marketRecyclerView"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/stock_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:textCursorDrawable="@null"
+                app:iconifiedByDefault="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:queryBackground="@null" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/market_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                app:layoutManager="LinearLayoutManager"
+                app:refreshMarketList="@{viewModel.filteredMarketList}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:context=".ui.BundleCategoriesFragment"
+                app:layout_constraintTop_toBottomOf="@id/stock_search"
+                tools:context=".HomeFragment"
                 tools:listitem="@layout/row_market" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

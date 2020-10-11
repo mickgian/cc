@@ -18,4 +18,5 @@ dependencies {
     //RX
     implementation Libraries.rxAndroid
     implementation Libraries.rxJava
+    implementation Libraries.rxKotlin
 }

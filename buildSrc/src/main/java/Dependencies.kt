@@ -40,6 +40,7 @@ object Versions {
     val recyclerview = "1.1.0"
     val reactiveAndroid = "2.1.1"
     val reactiveJava = "2.2.9"
+    val reactiveKotlin = "2.3.0"
     val safeArgs = "2.2.2"
 }
 
@@ -56,6 +57,7 @@ object Libraries {
     //RX
     val rxAndroid = "io.reactivex.rxjava2:rxandroid:${Versions.reactiveAndroid}"
     val rxJava = "io.reactivex.rxjava2:rxjava:${Versions.reactiveJava}"
+    val rxKotlin = "io.reactivex.rxjava2:rxkotlin:${Versions.reactiveKotlin}"
 }
 
 object KotlinLibraries {

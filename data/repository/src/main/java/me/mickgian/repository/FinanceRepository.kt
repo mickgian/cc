@@ -3,7 +3,7 @@ package me.mickgian.repository
 
 import io.reactivex.Observable
 import me.mickgian.model.MarketSummaryResponse
-import me.mickgian.model.StockSummaryResponse
+import me.mickgian.model.Stock
 import me.mickgian.network.FinanceDataSource
 
 
@@ -13,7 +13,7 @@ interface FinanceRepository {
     ): Observable<MarketSummaryResponse>
     fun getStockSummary(
         stock: String
-    ): Observable<StockSummaryResponse>
+    ): Observable<Stock>
 }
 
 class FinanceRepositoryImpl(
@@ -22,24 +22,18 @@ class FinanceRepositoryImpl(
 
     override fun getMarketSummary(country: String):Observable<MarketSummaryResponse> {
 
-        val parameters = mapOf(
-            "region" to country
-        )
+        val parameters = mapOf("region" to country)
 
         val result = dataSource.fetchMarketSummary(parameters)
         return result
-
     }
 
-    override fun getStockSummary(stock: String):Observable<StockSummaryResponse> {
+    override fun getStockSummary(stock: String):Observable<Stock> {
 
-        val parameters = mapOf(
-            "symbol" to stock
-        )
+        val parameters = mapOf("symbol" to stock)
 
         val result = dataSource.fetchStockSummary(parameters)
         return result
-
     }
 
 }

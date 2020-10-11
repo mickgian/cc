@@ -3,7 +3,7 @@ package me.mickgian.model
 
 import com.google.gson.annotations.SerializedName
 
-data class StockSummaryResponse(
+data class Stock(
     @SerializedName("defaultKeyStatistics")
     val defaultKeyStatistics: DefaultKeyStatistics?,
     @SerializedName("details")
@@ -1652,7 +1652,7 @@ data class StockSummaryResponse(
 
         data class FiftyDayAverage(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Double?,
             @SerializedName("fmt")
             val fmt: String?
         )

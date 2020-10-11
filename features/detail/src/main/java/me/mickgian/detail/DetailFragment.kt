@@ -19,12 +19,24 @@ class DetailFragment : BaseFragment() {
 
     private val detailViewModel: DetailViewModel by viewModel()
     private lateinit var binding: FragmentDetailBinding
+    private lateinit var stockSymbolString: String
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        arguments?.let {
+            val safeArgs = DetailFragmentArgs.fromBundle(it)
+            stockSymbolString = safeArgs.stockSymbolString
+        }
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDetailBinding .inflate(inflater, container, false)
         binding.viewmodel = detailViewModel
         binding.lifecycleOwner = viewLifecycleOwner
+
+        detailViewModel.loadDataWhenFragmentStarts(stockSymbolString)
 
         return binding.root
     }
