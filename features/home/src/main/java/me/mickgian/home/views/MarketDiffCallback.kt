@@ -15,7 +15,6 @@ class MarketDiffCallback (private val oldList: List<Market>,
         oldList[oldItemPosition] == newList[newItemPosition]
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        //TODO: to be implemented
-        return true
+        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

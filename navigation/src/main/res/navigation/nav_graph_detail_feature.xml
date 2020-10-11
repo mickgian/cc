@@ -8,7 +8,7 @@
     <fragment android:id="@+id/detailFragment"
               android:name="me.mickgian.detail.DetailFragment"
               android:label="Stock's detail">
-        <argument android:name="login" app:argType="string"/>
+        <argument android:name="stockSymbolString" app:argType="string"/>
         <action android:id="@+id/action_detailFragment_to_imageDetailFragment"
                 app:destination="@id/imageDetailFragment"
                 app:enterAnim="@anim/nav_default_pop_enter_anim"

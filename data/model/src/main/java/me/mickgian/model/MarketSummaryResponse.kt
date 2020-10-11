@@ -15,7 +15,7 @@ data class MarketSummaryResponse(
     ) {
         data class Market(
             @SerializedName("fullExchangeName")
-            val fullExchangeName: String?,
+            val fullExchangeName: String,
             @SerializedName("exchangeTimezoneName")
             val exchangeTimezoneName: String?,
             @SerializedName("symbol")
