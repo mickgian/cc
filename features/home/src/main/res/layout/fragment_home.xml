@@ -12,7 +12,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary">
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/stock_search"
@@ -25,20 +26,33 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:queryBackground="@null" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/market_recycler_view"
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                app:refreshMarketList="@{viewModel.filteredMarketList}"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:fadingEdgeLength="20dp"
+                android:requiresFadingEdge="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/stock_search"
-                tools:context=".HomeFragment"
-                tools:listitem="@layout/row_market" />
+                app:layout_constraintTop_toBottomOf="@id/stock_search">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/market_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:background="@color/colorPrimary"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stock_search"
+                    app:refreshMarketList="@{viewModel.filteredMarketList}"
+                    tools:context=".HomeFragment"
+                    tools:listitem="@layout/row_market" />
+
+            </androidx.core.widget.NestedScrollView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

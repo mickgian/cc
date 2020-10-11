@@ -204,7 +204,7 @@ data class Stock(
 
         data class SharesOutstanding(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -229,7 +229,7 @@ data class Stock(
 
         data class SharesShort(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -245,7 +245,7 @@ data class Stock(
 
         data class LastFiscalYearEnd(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -299,7 +299,7 @@ data class Stock(
 
         data class NextFiscalYearEnd(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -309,7 +309,7 @@ data class Stock(
 
         data class MostRecentQuarter(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -323,14 +323,14 @@ data class Stock(
 
         data class SharesShortPreviousMonthDate(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
 
         data class FloatShares(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -346,7 +346,7 @@ data class Stock(
 
         data class EnterpriseValue(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -355,7 +355,7 @@ data class Stock(
 
         data class PriceHint(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -367,7 +367,7 @@ data class Stock(
 
         data class LastSplitDate(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -386,7 +386,7 @@ data class Stock(
 
         data class DateShortInterest(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -416,7 +416,7 @@ data class Stock(
 
         data class SharesShortPriorMonth(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -714,7 +714,7 @@ data class Stock(
 
         data class AverageDailyVolume3Month(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -733,7 +733,7 @@ data class Stock(
 
         data class AverageDailyVolume10Day(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -786,7 +786,7 @@ data class Stock(
 
         data class PriceHint(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -802,7 +802,7 @@ data class Stock(
 
         data class RegularMarketVolume(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -814,7 +814,7 @@ data class Stock(
 
         data class MarketCap(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -844,7 +844,7 @@ data class Stock(
 
     data class FundOwnership(
         @SerializedName("maxAge")
-        val maxAge: Int?,
+        val maxAge: Long?,
         @SerializedName("ownershipList")
         val ownershipList: List<Any?>?
     )
@@ -879,14 +879,14 @@ data class Stock(
         ) {
             data class StartDate(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?
             )
 
             data class Shares(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -895,7 +895,7 @@ data class Stock(
 
             data class Value(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -932,14 +932,14 @@ data class Stock(
         ) {
             data class LatestTransDate(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?
             )
 
             data class PositionDirect(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -948,14 +948,14 @@ data class Stock(
 
             data class PositionDirectDate(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?
             )
 
             data class PositionIndirectDate(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?
             )
@@ -993,7 +993,7 @@ data class Stock(
 
         data class NetInfoCount(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1002,7 +1002,7 @@ data class Stock(
 
         data class TotalInsiderShares(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1011,7 +1011,7 @@ data class Stock(
 
         data class BuyInfoShares(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1027,7 +1027,7 @@ data class Stock(
 
         data class SellInfoCount(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: Any?,
             @SerializedName("longFmt")
@@ -1045,7 +1045,7 @@ data class Stock(
 
         data class NetInfoShares(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1088,7 +1088,7 @@ data class Stock(
 
         data class InstitutionsCount(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1181,7 +1181,7 @@ data class Stock(
 
         data class OperatingCashflow(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1204,7 +1204,7 @@ data class Stock(
 
         data class Ebitda(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1213,14 +1213,14 @@ data class Stock(
 
         data class TargetLowPrice(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
 
         data class GrossProfits(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1269,7 +1269,7 @@ data class Stock(
 
         data class NumberOfAnalystOpinions(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1299,7 +1299,7 @@ data class Stock(
 
         data class TargetHighPrice(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -1315,7 +1315,7 @@ data class Stock(
 
         data class TotalDebt(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1324,7 +1324,7 @@ data class Stock(
 
         data class TotalRevenue(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1420,7 +1420,7 @@ data class Stock(
         ) {
             data class EarningsDate(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?
             )
@@ -1448,7 +1448,7 @@ data class Stock(
 
             data class RevenueAverage(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -1457,7 +1457,7 @@ data class Stock(
 
             data class RevenueLow(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -1466,7 +1466,7 @@ data class Stock(
 
             data class RevenueHigh(
                 @SerializedName("raw")
-                val raw: Int?,
+                val raw: Long?,
                 @SerializedName("fmt")
                 val fmt: String?,
                 @SerializedName("longFmt")
@@ -1613,7 +1613,7 @@ data class Stock(
 
         data class PayoutRatio(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?
         )
@@ -1633,7 +1633,7 @@ data class Stock(
 
         data class AverageDailyVolume10Day(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1669,7 +1669,7 @@ data class Stock(
 
         data class AverageVolume10days(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1710,7 +1710,7 @@ data class Stock(
 
         data class PriceHint(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1719,7 +1719,7 @@ data class Stock(
 
         data class RegularMarketVolume(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1734,7 +1734,7 @@ data class Stock(
 
         data class MarketCap(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1749,7 +1749,7 @@ data class Stock(
 
         data class AverageVolume(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1782,7 +1782,7 @@ data class Stock(
 
         data class AskSize(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1791,7 +1791,7 @@ data class Stock(
 
         data class Volume(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")
@@ -1834,7 +1834,7 @@ data class Stock(
 
         data class BidSize(
             @SerializedName("raw")
-            val raw: Int?,
+            val raw: Long?,
             @SerializedName("fmt")
             val fmt: String?,
             @SerializedName("longFmt")

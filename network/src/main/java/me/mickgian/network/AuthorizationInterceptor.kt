@@ -12,7 +12,7 @@ import java.io.IOException
 const val RAPID_API_HOST = "x-rapidapi-host"
 const val YAHOO_FINANCE_API = "apidojo-yahoo-finance-v1.p.rapidapi.com"
 const val RAPID_API_KEY = "x-rapidapi-key"
-const val RAPID_API_KEY_VALUE = "663f7f2732mshd602164f3011c0fp1b6befjsn976bb6519729"
+const val RAPID_API_KEY_VALUE = "Insert Your Key Here"
 
 
 class AuthorizationInterceptor : Interceptor {

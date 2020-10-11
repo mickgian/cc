@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_home.*
 import me.mickgian.common.base.BaseFragment
 import me.mickgian.common.base.BaseViewModel
@@ -34,26 +37,34 @@ class HomeFragment : BaseFragment(), SearchView.OnQueryTextListener {
 
         stock_search.setOnQueryTextListener(this)
         configureRecyclerView()
+        observeQueryValue()
+
         homeViewModel.fetchMarkets()
     }
-    override fun onQueryTextSubmit(query: String?): Boolean {
-        onSearched(query)
+
+    override fun onQueryTextSubmit(query: String): Boolean {
+        homeViewModel.setQuery(query)
         return true
     }
 
-    override fun onQueryTextChange(query: String?): Boolean {
-        onSearched(query)
+    override fun onQueryTextChange(query: String): Boolean {
+        homeViewModel.setQuery(query)
         return true
     }
 
     override fun getViewModel(): BaseViewModel = homeViewModel
 
-    private fun configureRecyclerView() {
-        market_recycler_view.adapter =
-            MarketAdapter(homeViewModel)
+    private fun observeQueryValue() {
+        homeViewModel.query.observe(viewLifecycleOwner, Observer {queryValue ->
+            homeViewModel.filterMarkets(queryValue)
+        })
     }
 
-    private fun onSearched(query: String?) {
-        homeViewModel.filterMarkets(query)
+    private fun configureRecyclerView() {
+        market_recycler_view.adapter = MarketAdapter(homeViewModel)
+        market_recycler_view.addItemDecoration(
+            DividerItemDecoration(context, LinearLayoutManager.HORIZONTAL)
+        )
     }
+
 }

@@ -5,49 +5,102 @@
 
     <data>
         <variable
-                name="viewmodel"
+                name="viewModel"
                 type="me.mickgian.detail.DetailViewModel"/>
     </data>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/stock_symbol_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textSize="22sp"
+            android:text="@string/trading_symbol"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/trading_symbol"/>
+
+        <TextView
+            android:id="@+id/stock_symbol_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{viewModel.symbol}"
+            android:textSize="22sp"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/stock_symbol_label"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="ARMN" />
+
+        <TextView
+            android:id="@+id/stock_short_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textSize="22sp"
+            android:text="@{viewModel.shortName}"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stock_symbol_name"
+            tools:text="Amarin Corporation plc"/>
 
 
-            <TextView
-                android:id="@+id/fragment_detail_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="fragment_detail_name"/>
+        <TextView
+            android:id="@+id/regular_market_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:textSize="24sp"
+            android:text="@{viewModel.regularMarketPrice}"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stock_short_name"
+            tools:text="2,904.31" />
 
+        <TextView
+            android:id="@+id/regular_market_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{viewModel.regularMarketChange}"
+            android:textSize="24sp"
+            android:textColor="@{viewModel.isPricePositive ? @color/green : @color/red}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintStart_toEndOf="@+id/regular_market_price"
+            app:layout_constraintTop_toBottomOf="@+id/stock_short_name"
+            tools:text="9.00" />
 
-            <TextView
-                android:id="@+id/fragment_detail_company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_detail_name"
-                tools:text="fragment_detail_company"/>
+        <TextView
+            android:id="@+id/regular_market_change_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@{viewModel.regularMarketChangePercent}"
+            android:textSize="24sp"
+            android:textColor="@{viewModel.isPricePositive ? @color/green : @color/red}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toEndOf="@+id/regular_market_change"
+            app:layout_constraintTop_toBottomOf="@+id/stock_short_name"
+            tools:text="(+12.01)" />
 
-
-            <TextView
-                android:id="@+id/fragment_detail_blog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fragment_detail_company"
-                tools:text="fragment_detail_blog"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

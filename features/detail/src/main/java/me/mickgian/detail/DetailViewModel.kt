@@ -23,12 +23,29 @@ class DetailViewModel(
 ): BaseViewModel() {
 
     private var disposable: Disposable? = null
+    private val stock = MutableLiveData<Stock>()
 
-    private val _stock = MutableLiveData<Stock>()
-    val stock: LiveData<Stock> get() = _stock
+    private val _symbol = MutableLiveData<String>()
+    val symbol: LiveData<String> get() = _symbol
 
-    fun loadDataWhenFragmentStarts(stockSymbolString: String) {
-        fetchStock(stockSymbolString)
+    private val _shortName = MutableLiveData<String>()
+    val shortName: LiveData<String> get() = _shortName
+
+    private val _regularMarketPrice = MutableLiveData<String>()
+    val regularMarketPrice: LiveData<String> get() = _regularMarketPrice
+
+    private val _regularMarketChange = MutableLiveData<String>()
+    val regularMarketChange: LiveData<String> get() = _regularMarketChange
+
+    private val _regularMarketChangePercent = MutableLiveData<String>()
+    val regularMarketChangePercent: LiveData<String> get() = _regularMarketChangePercent
+
+    private val _isPricePositive = MutableLiveData<Boolean>()
+    val isPricePositive: LiveData<Boolean> get() = _isPricePositive
+
+
+    fun loadDataWhenFragmentStarts(marketSymbolString: String) {
+        fetchStock(marketSymbolString)
     }
 
     private fun fetchStock(stockSymbolString: String) {
@@ -38,8 +55,23 @@ class DetailViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError { _error -> Log.e(TAG, _error.message.toString()) }
             .subscribe { stockResponse ->
-                _stock.value = stockResponse
+                stock.value = stockResponse
+                _symbol.value = stockResponse.symbol
+                _shortName.value = stockResponse.quoteType?.shortName
+                _regularMarketPrice.value = stockResponse.price?.regularMarketPrice?.fmt
+                _regularMarketChange.value = setTextValue(stockResponse.price?.regularMarketChange?.fmt ?: "-")
+                _regularMarketChangePercent.value = setTextValue(stockResponse.price?.regularMarketChangePercent?.fmt ?: "-")
             }
+    }
+
+    private fun setTextValue(fmt: String): String {
+        return if (fmt.startsWith("-")){
+            _isPricePositive.value = false
+            fmt
+        }else{
+            _isPricePositive.value = true
+            "+$fmt"
+        }
     }
 
 
