@@ -15,47 +15,78 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:padding="8dp">
+            android:background="@color/colorPrimary">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/marketCategoryLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@color/colorPrimary"
                 android:clickable="true"
                 android:focusable="true"
                 android:onClick="@{() -> viewModel.marketClicksOnItem(market)}">
 
                 <TextView
                     android:id="@+id/market_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:textColor="@android:color/black"
-                    android:background="@android:color/holo_blue_light"
-                    android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Market name"/>
+                    tools:text="Market name" />
 
                 <TextView
-                    android:id="@+id/market_price"
-                    android:layout_width="match_parent"
+                    android:id="@+id/regular_market_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/market_name"
+                    tools:text="16,196.21" />
+
+                <TextView
+                    android:id="@+id/regular_market_change"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="+161.39" />
+
+                <TextView
+                    android:id="@+id/regular_market_change_percent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:backgroundTint="@android:color/holo_blue_dark"
-                    android:textColor="@android:color/black"
-                    app:layout_constraintStart_toStartOf="@+id/market_name"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/market_name"
-                    tools:text="Market price"/>
+                    tools:text="(+0.57%)" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,8 +7,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import me.mickgian.common.base.BaseViewModel
+import me.mickgian.common.utils.ResourcesProvider
 import me.mickgian.model.MarketSummaryResponse.MarketSummaryResponse.Market
 import me.mickgian.repository.FinanceRepository
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 
@@ -20,16 +22,18 @@ const val TAG = "HomeViewModel"
  * for [HomeFragment].
  */
 class HomeViewModel(
-    private val financeRepository: FinanceRepository
+    private val financeRepository: FinanceRepository,
+    private val resourcesProvider: ResourcesProvider
 ) : BaseViewModel() {
 
     private var disposable: Disposable? = null
-
-    private val _marketList = MutableLiveData<MutableList<Market>>()
-    val marketList: LiveData<MutableList<Market>> get() = _marketList
+    private val marketList = MutableLiveData<MutableList<Market>>()
 
     private val _filteredMarketList = MutableLiveData<MutableList<Market>>()
     val filteredMarketList: LiveData<MutableList<Market>> get() = _filteredMarketList
+
+    private val _query = MutableLiveData<String>().apply { value = "" }
+    val query: LiveData<String> get() = _query
 
     fun fetchMarkets() {
         disposable = financeRepository.getMarketSummary(COUNTRY)
@@ -38,34 +42,41 @@ class HomeViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .doOnError { _error -> Log.e(TAG, _error.message.toString()) }
             .subscribe { marketResponse ->
-                _marketList.value = marketResponse.marketSummaryResponse.marketList
-                filterMarkets("") //TODO: to be reactive, query value should be stored in a LiveData and observed from Fragment
+                marketList.value = marketResponse.marketSummaryResponse.marketList
+                filterMarkets(query.value)
             }
     }
 
     fun marketClicksOnItem(market: Market) {
-        market.symbol?.let { stockSymbolString ->
-            navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(stockSymbolString))
+        market.symbol?.let { marketSymbolString ->
+            navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(marketSymbolString))
         }
     }
 
     fun filterMarkets(query: String?) {
         if(marketList.value != null && query != null) {
-            _filteredMarketList.value = if (query.isEmpty()) {
-                marketList.value
-            }
-            else {
-                val filteredList = mutableListOf<Market>()
-                for (market in marketList.value!!) {
-                    market.fullExchangeName.let { fullExchangeName ->
-                        if (fullExchangeName.toLowerCase().contains(query)) filteredList.add(market)
+            _filteredMarketList.value =
+            when (query.isEmpty()) {
+                true -> marketList.value
+                else -> {
+                    val filteredList = mutableListOf<Market>()
+                    for (market in marketList.value!!) {
+                        market.fullExchangeName.let { fullExchangeName ->
+                            if (fullExchangeName.toLowerCase(Locale.ROOT).contains(query)) filteredList.add(market)
+                        }
                     }
+                    filteredList
                 }
-                filteredList
             }
         }
-
     }
 
+    fun setQuery(newValue: String) {
+        _query.value = newValue
+    }
+
+    fun getResourceProvider() : ResourcesProvider {
+        return resourcesProvider
+    }
 
 }
